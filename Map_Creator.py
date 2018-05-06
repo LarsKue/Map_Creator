@@ -7,14 +7,14 @@ Description: Creates a map and collision map file based on image input for use i
 
 from PIL import Image
 
-im = Image.open("empty-test.png")
+im = Image.open("images/level2_proto.png")
 RGB = list(im.getdata())
 column = 0
 width, height = im.size
 print(RGB)          # You should check if this produced the correct results (else your image might not be RGB-coded)
 print("Size: ", width, height)
 im.close()
-with open("empty-test.map", "w") as m, open("empty-test.cmap", "w") as c:
+with open("mapfiles/level2.map", "w") as m, open("mapfiles/level2.cmap", "w") as c:
     for item in RGB:
         # black = air
         if item == (0, 0, 0):
